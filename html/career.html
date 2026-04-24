@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuyển dụng | Phố Nướng</title>
+
+    <link rel="stylesheet" href="../css/career.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../logotron.ico">
+</head>
+
+<body>
+    <section class="hero">
+        <video class="hero__bg" autoplay muted loop playsinline>
+            <source src="../img/cooking.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero__overlay"></div>
+
+        <header class="header">
+            <div class="container header__inner">
+                <div class="brand">
+                    <a href="../index.html" class="brand__logo">PHỐ NƯỚNG</a>
+                    <div class="brand__country">VIETNAM</div>
+                </div>
+
+                <nav class="nav">
+                    <a href="../html/reservation.html"><i class="fa-regular fa-calendar"></i><span>Đặt bàn</span></a>
+                    <a href="../html/delivery.html"><i class="fa-solid fa-cart-shopping"></i><span>Giao hàng</span></a>
+                    <a href="../html/career.html"><i class="fa-sharp fa-solid fa-mobile"></i><span>Tuyển dụng</span></a>
+                </nav>
+
+                <div class="header__right">
+                    <div class="lang-switch" id="langSwitch">
+                        <button class="lang-btn" id="langBtn" type="button" aria-expanded="false">
+                            <span id="langCurrent">VN</span>
+                            <span class="lang-caret">▾</span>
+                        </button>
+
+                        <div class="lang-menu" id="langMenu" role="menu">
+                            <button class="lang-item" type="button" data-lang="vi">VN</button>
+                            <button class="lang-item" type="button" data-lang="en">EN</button>
+                        </div>
+                    </div>
+
+                    <button class="burger" aria-label="logo">
+                        <img src="../img/logo tròn.png" alt="logo">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="container hero__content">
+            <div class="countries">
+                <a class="countries__item is-active" href="#">Tuyển dụng</a>
+                <a class="countries__item" href="#">Giao hàng</a>
+                <a class="countries__item" href="#">Phục vụ</a>
+                <a class="countries__item" href="#">Thu ngân</a>
+                <a class="countries__item" href="#">Phụ bếp</a>
+            </div>
+
+            <div class="badge">
+                <div class="badge__left">
+                    <h2 class="badge__title">ĐĂNG KÝ TUYỂN DỤNG</h2><br>
+                    <p class="badge__sub">Gia nhập đội ngũ Phố Nướng Châu Đốc</p>
+                    <p class="badge__desc">
+                        Chúng tôi đang tìm ứng viên cho các vị trí phục vụ, bếp, thu ngân và giao hàng. Không yêu cầu kinh nghiệm – được đào tạo từ đầu.
+                    </p>
+                </div>
+
+                <div class="badge__right">
+                    <form class="recruit-form" id="recruitForm" novalidate>
+                        <input type="text" id="fullname" class="recruit-form__input" placeholder="Họ và tên">
+
+                        <input type="tel" id="phone" class="recruit-form__input" placeholder="Số điện thoại">
+
+                        <select id="position" class="recruit-form__select">
+                            <option value="">Vị trí ứng tuyển</option>
+                            <option value="phuc-vu">Phục vụ</option>
+                            <option value="thu-ngan">Thu ngân</option>
+                            <option value="phu-bep">Phụ bếp</option>
+                            <option value="giao-hang">Giao hàng</option>
+                        </select>
+
+                        <div class="form-error" id="recruitError"></div>
+                        <div class="form-msg" id="recruitMsg"></div>
+
+                        <button type="submit" class="recruit-form__submit">
+                            GỬI ĐĂNG KÝ
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/career.js"></script>
+</body>
+
+</html>

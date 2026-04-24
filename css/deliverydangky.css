@@ -1,0 +1,654 @@
+/* =====================================================
+   deliverydangky.css
+   Style theo ảnh "Tạo tài khoản" (Pizza 4P's vibe)
+===================================================== */
+
+
+/* reset gọn */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #1f2f5a;
+    --bg: #e9e1d2;
+    /* nền be */
+    --card: #f7f4ef;
+    /* nền card hơi ngà */
+    --field-bg: #ffffff;
+    /* nền input */
+    --line: #dfd6c7;
+    /* viền input */
+    --muted: rgba(31, 47, 90, .65);
+    --text: #1f2f5a;
+    --shadow: 0 18px 44px rgba(0, 0, 0, .18);
+    --radius: 18px;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+
+/* =========================
+   HEADER nhỏ giống ảnh
+========================= */
+
+.header {
+    height: 60px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+
+.header .container {
+    width: min(1180px, calc(100% - 44px));
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 6px;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+
+/* cụm hotline + language bên phải (nếu có) */
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.header__right a {
+    color: #c22424;
+    /* màu cam đỏ underline hotline */
+    text-decoration: none;
+    text-underline-offset: 3px;
+}
+
+.lang-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, .35);
+    padding: 8px 10px;
+    border-radius: 999px;
+}
+
+
+/* =========================
+   PAGE WRAP
+========================= */
+
+.auth-page {
+    min-height: calc(100vh - 60px);
+    padding: 52px 0 70px;
+}
+
+
+/* card form giữa màn hình */
+
+.auth-card {
+    width: min(680px, calc(100% - 48px));
+    margin: 0 auto;
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 34px 34px 26px;
+}
+
+
+/* title */
+
+.auth-title {
+    text-align: center;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 6px 0 26px;
+    letter-spacing: .2px;
+    color: var(--text);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.auth-form {
+    display: grid;
+    gap: 16px;
+}
+
+
+/* field block */
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+
+/* input / select */
+
+.field input,
+.field select {
+    width: 100%;
+    height: 56px;
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: var(--field-bg);
+    padding: 0 18px;
+    font-size: 16px;
+    color: var(--text);
+    outline: none;
+}
+
+
+/* placeholder */
+
+.field input::placeholder {
+    color: rgba(31, 47, 90, .55);
+}
+
+
+/* focus */
+
+.field input:focus,
+.field select:focus {
+    border-color: rgba(31, 47, 90, .45);
+    box-shadow: 0 0 0 4px rgba(31, 47, 90, .10);
+}
+
+
+/* select arrow nhẹ (tuỳ browser) */
+
+.field select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, rgba(31, 47, 90, .55) 50%), linear-gradient(135deg, rgba(31, 47, 90, .55) 50%, transparent 50%);
+    background-position: calc(100% - 22px) 50%, calc(100% - 16px) 50%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 46px;
+}
+
+
+/* trạng thái lỗi theo yêu cầu bạn */
+
+.error {
+    min-height: 14px;
+    font-size: 12px;
+    color: #c0392b;
+    margin-left: 6px;
+}
+
+.is-invalid {
+    border-color: #c0392b !important;
+    box-shadow: 0 0 0 4px rgba(192, 57, 43, .12) !important;
+}
+
+
+/* row 2 cột (nếu bạn muốn ghép giới tính + ngày sinh 1 hàng) */
+
+.row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+
+/* =========================
+   CAPTCHA DEMO BOX
+========================= */
+
+.captcha-box {
+    margin-top: 6px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, .08);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.auth-submit {
+    margin: 18px auto 0;
+    width: min(360px, 100%);
+    height: 58px;
+    border-radius: 999px;
+    border: none;
+    background: #ded7c7;
+    /* màu be xám giống ảnh */
+    color: rgba(31, 47, 90, .55);
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+/* nếu bạn muốn “enable” khi form hợp lệ thì thêm class .is-active bằng JS */
+
+.auth-submit.is-active {
+    background: #c77a2a;
+    color: #fff;
+}
+
+
+/* =========================
+   FOOT NOTE
+========================= */
+
+.auth-note {
+    text-align: center;
+    margin: 18px 0 6px;
+    color: var(--text);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.auth-note a {
+    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.auth-bottom {
+    text-align: center;
+    margin-top: 12px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.auth-bottom a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 900;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 760px) {
+    .auth-card {
+        padding: 26px 18px 20px;
+        border-radius: 14px;
+    }
+    .auth-title {
+        font-size: 30px;
+    }
+    .row-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* CHỈNH FORM ĐĂNG NHẬP NHỎ LẠI
+/* =========================
+   AUTH (LOGIN) - THU NHỎ FORM
+   dán CUỐI deliverydangky.css
+========================= */
+
+.auth-page {
+    min-height: calc(100vh - 50px);
+    /* trừ header */
+    display: flex;
+    align-items: flex-start;
+    /* đừng kéo form quá giữa */
+    justify-content: center;
+    padding: 28px 14px 40px;
+    /* giảm padding tổng */
+    background: var(--bg, #e9e1d2);
+}
+
+
+/* Khung form */
+
+.auth-card {
+    width: min(460px, 100%);
+    /* ↓ từ 520 xuống */
+    padding: 20px 20px 18px;
+    /* ↓ padding */
+    border-radius: 16px;
+}
+
+
+/* Title nhỏ lại */
+
+.auth-title {
+    font-size: 34px;
+    /* 👈 giảm từ quá to xuống */
+    margin: 4px 0 16px;
+    line-height: 1.05;
+}
+
+
+/* Form: giảm khoảng cách giữa các field */
+
+.auth-form {
+    display: grid;
+    gap: 14px;
+    /* 👈 giảm gap */
+}
+
+
+/* Input thấp hơn */
+
+.auth-card input {
+    height: 48px;
+    /* 👈 thấp lại */
+    padding: 0 16px;
+    font-size: 15px;
+    border-radius: 16px;
+}
+
+
+/* Nút thấp lại */
+
+.auth-submit {
+    height: 54px;
+    /* 👈 thấp lại */
+    font-size: 18px;
+    border-radius: 999px;
+    margin-top: 6px;
+}
+
+
+/* Dòng dưới */
+
+.auth-bottom {
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+
+/* Tách form khỏi header xanh */
+
+.auth-page {
+    padding-top: 80px !important;
+    /* 👈 tăng khoảng thở */
+}
+
+
+/* Tách riêng tiêu đề khỏi mép card (nếu vẫn sát) */
+
+.auth-title {
+    margin-top: 18px !important;
+}
+
+
+/*ĐĂNG NHẬP LOGO*/
+
+.hotline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* khoảng cách icon – chữ */
+    font-size: 14px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.hotline__icon {
+    width: 40px;
+    /* 👈 logo nhỏ gọn */
+    height: 40px;
+    object-fit: contain;
+}
+
+.hotline a {
+    color: #ff6a00;
+    /* nổi bật số */
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.hotline__icon {
+    width: 30px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    animation: hotlineSpin 6s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes hotlineSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Nút logo ngôn ngữ */
+
+.lang-logo-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+
+/* Ảnh logo */
+
+.lang-logo-btn img {
+    width: 30px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    transition: transform .6s ease;
+    transform-origin: center;
+}
+
+
+/* hover: xoay logo cho đồng bộ phong cách */
+
+.lang-logo-btn:hover img {
+    transform: rotate(360deg);
+}
+
+.lang-logo-btn:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+.lang-logo-btn img {
+    width: 30px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    animation: spinLogo 4s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes spinLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   deliverydangky.css
+   Style theo ảnh "Tạo tài khoản" (Pizza 4P's vibe)
+===================================================== */
+
+
+/* reset gọn */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #003049;
+    --bg: #e9e1d2;
+    --card: #f7f4ef;
+    --field-bg: #ffffff;
+    --line: #dfd6c7;
+    --muted: rgba(0, 48, 73, .65);
+    --text: #003049;
+    --shadow: 0 18px 44px rgba(0, 0, 0, .18);
+    --radius: 18px;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    height: 60px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+}
+
+.brand {
+    color: #fff;
+}
+
+.header__right {
+    color: #fff;
+}
+
+.header__right a {
+    color: #c22424;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.auth-title,
+.auth-note,
+.auth-bottom,
+.auth-bottom a {
+    color: var(--text);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.field input,
+.field select {
+    color: var(--text);
+}
+
+.field input::placeholder {
+    color: rgba(0, 48, 73, .55);
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: rgba(0, 48, 73, .45);
+    box-shadow: 0 0 0 4px rgba(0, 48, 73, .10);
+}
+
+.field select {
+    background-image: linear-gradient(45deg, transparent 50%, rgba(0, 48, 73, .55) 50%), linear-gradient(135deg, rgba(0, 48, 73, .55) 50%, transparent 50%);
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+.error {
+    color: #c0392b;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.auth-submit {
+    color: rgba(0, 48, 73, .55);
+}
+
+.auth-submit.is-active {
+    background: #c77a2a;
+    color: #fff;
+}
+
+
+/* =========================
+   HOTLINE
+========================= */
+
+.hotline {
+    color: #fff;
+}
+
+.hotline a {
+    color: #ff6a00;
+}
+
+
+/* =========================
+   LANG BUTTON
+========================= */
+
+.lang-pill {
+    color: #fff;
+}
+
+
+/* =========================
+   END
+========================= */

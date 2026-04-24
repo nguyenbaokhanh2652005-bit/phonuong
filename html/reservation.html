@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt bàn | Phố Nướng</title>
+    <link rel="stylesheet" href="../css/reservation.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../logotron.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header__inner">
+            <a class="brand" href="../index.html">PHỐ NƯỚNG</a>
+
+            <div class="header__right">
+
+                <!-- 🌍 LANGUAGE SWITCH -->
+                <div class="lang-switch" id="langSwitch">
+                    <button class="lang-btn" id="langBtn" type="button">
+            <span id="langCurrent">VN</span>
+            <span class="lang-caret">▾</span>
+        </button>
+
+                    <div class="lang-menu" id="langMenu">
+                        <button class="lang-item" data-lang="vi">VN</button>
+                        <button class="lang-item" data-lang="en">EN</button>
+                    </div>
+                </div>
+
+                <a class="header-logo" href="../index.html">
+                    <img src="../img/logo tròn.png" />
+                </a>
+
+                <a class="login-btn" href="../html/deliverydangnhap.html">
+        Đăng nhập →
+    </a>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main-reserve">
+        <!-- Hero section với ảnh nền -->
+        <section class="reserve-hero">
+            <div class="reserve-hero__bg" aria-hidden="true"></div>
+            <div class="reserve-hero__overlay" aria-hidden="true"></div>
+
+            <div class="container reserve-hero__content">
+                <h1 class="reserve-hero__title">Đặt Bàn</h1>
+                <p class="reserve-hero__subtitle">
+                    Mời bạn đặt hàng ngay để trải nghiệm ẩm thực tuyệt vời tại Phố Nướng, Châu Đốc An Giang!
+                </p>
+
+                <!-- Booking form -->
+                <!-- Booking form -->
+                <form class="reserve-form" id="reserveForm" action="#" method="get" novalidate>
+                    <div class="reserve-form__fields">
+
+                        <!-- ✅ Số điện thoại (thay cho Chi nhánh) -->
+                        <div class="field">
+                            <label>Số điện thoại</label>
+                            <input id="phone" type="tel" placeholder="VD: 0918189202" inputmode="numeric" autocomplete="tel">
+                        </div>
+
+                        <div class="field">
+                            <label>Người lớn</label>
+                            <select id="guests">
+        <option value="">Chọn số người</option>
+        <option value="1">1 Người</option>
+        <option value="2">2 Người</option>
+        <option value="3">3 Người</option>
+        <option value="4">4 Người</option>
+      </select>
+                        </div>
+
+                        <div class="field">
+                            <label>Ngày</label>
+                            <input id="date" type="date">
+                        </div>
+
+                        <div class="field">
+                            <label>Thời gian</label>
+                            <input id="time" type="time">
+                        </div>
+
+                        <button class="reserve-form__submit" type="submit">
+      🗓️ <span>Đặt bàn</span>
+    </button>
+
+                        <!-- ✅ Nếu bạn đã có #reserveMsg ở chỗ khác thì có thể bỏ dòng này -->
+                        <div id="reserveMsg" style="display:none;"></div>
+
+                    </div>
+                </form>
+
+
+                <!-- message -->
+                <div class="reserve-form__msg" id="reserveMsg"></div>
+            </div>
+            </form>
+
+
+            <!-- Location chips -->
+            <div class="location">
+                <span class="location__label">Địa điểm phục vụ:</span>
+                <div class="location__chips">
+                    <button class="chip chip--active" type="button" disabled>
+            An Giang
+        </button>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Info section (Find your table) -->
+        <section class="reserve-info">
+            <div class="reserve-info__bg" aria-hidden="true"></div>
+            <div class="reserve-info__overlay" aria-hidden="true"></div>
+
+            <div class="container reserve-info__content">
+                <h2 class="reserve-info__title">Tìm Bàn Cho Bạn</h2>
+                <p class="reserve-info__or">HOẶC</p>
+
+                <div class="reserve-info__text">
+                    <p>
+                        Để được phục vụ tốt nhất, bạn nên đặt bàn trước (đặc biệt vào giờ cao điểm). Với các yêu cầu đặc biệt như:
+                    </p>
+
+                    <ul class="reserve-info__list">
+                        <p>Đoàn đông từ <strong>15 khách</strong> trở lên</p>
+                        <p>Đặt bàn trước nhiều ngày</p>
+                        <p>Yêu cầu <strong>không gian riêng</strong> / vị trí ưu tiên</p>
+                    </ul>
+
+                    <p class="reserve-info__brand"><strong>Hải Sản Phố Nướng – Châu Đốc</strong></p>
+                    <p>📍 <strong>Địa chỉ:</strong> 231 Trương Nữ Vương, Phường Châu Đốc, Tỉnh An Giang</p>
+                    <p>⏰ <strong>Giờ mở cửa:</strong> 09:00 – 22:00 (hằng ngày)</p>
+
+                    <p class="contact-actions">
+                        📞 <strong>Hotline:</strong>
+                        <a href="tel:0918160120" class="hotline" data-phone="0918160120">0918 160 120</a>
+                        <span class="sep">|</span>
+                        <a href="https://zalo.me/0886433210" class="zalo-link" target="_blank">Zalo</a>
+                    </p>
+
+
+
+
+                    <p class="reserve-info__note">
+                        Nếu bạn cần giữ bàn gấp, vui lòng gọi trực tiếp trong giờ mở cửa để chúng tôi hỗ trợ nhanh nhất.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating call button -->
+    <a class="floating-call" href="tel:19006043" aria-label="Call us">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("reservation js loaded ✅");
+
+            var form = document.getElementById("reserveForm");
+            if (!form) {
+                console.warn("Không tìm thấy #reserveForm");
+                return;
+            }
+
+            var phone = document.getElementById("phone");
+            var guests = document.getElementById("guests");
+            var dateEl = document.getElementById("date");
+            var timeEl = document.getElementById("time");
+
+            // Nếu thiếu input nào đó => báo rõ luôn
+            if (!phone || !guests || !dateEl || !timeEl) {
+                console.warn("Thiếu field trong form:", {
+                    phone: !!phone,
+                    guests: !!guests,
+                    date: !!dateEl,
+                    time: !!timeEl
+                });
+            }
+
+            // Message box
+            var msg = document.getElementById("reserveMsg");
+            if (!msg) {
+                msg = document.createElement("div");
+                msg.id = "reserveMsg";
+                msg.style.display = "none";
+                form.appendChild(msg);
+            }
+
+            function show(text, ok) {
+                msg.textContent = text;
+                msg.style.marginTop = "10px";
+                msg.style.padding = "10px 12px";
+                msg.style.borderRadius = "12px";
+                msg.style.fontSize = "14px";
+                msg.style.display = "block";
+                msg.style.background = ok ? "rgba(0,160,90,.12)" : "rgba(255,0,0,.12)";
+                msg.style.border = ok ? "1px solid rgba(0,160,90,.25)" : "1px solid rgba(255,0,0,.2)";
+                msg.style.color = ok ? "#065f46" : "#b91c1c";
+            }
+
+            function normalizePhone(v) {
+                return (v || "").replace(/[^\d]/g, "");
+            }
+
+            function isValidVNPhone(p) {
+                return /^(03|05|07|08|09)\d{8}$/.test(p);
+            }
+
+            form.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                var p = phone ? normalizePhone(phone.value) : "";
+                var g = guests ? (guests.value || "").trim() : "";
+                var d = dateEl ? (dateEl.value || "") : "";
+                var t = timeEl ? (timeEl.value || "") : "";
+
+                if (!p) return show("⚠️ Vui lòng nhập số điện thoại.", false);
+                if (!isValidVNPhone(p)) return show("⚠️ Số điện thoại chưa đúng (VD: 0918169878).", false);
+                if (!g) return show("⚠️ Vui lòng chọn số người.", false);
+                if (!d) return show("⚠️ Vui lòng chọn ngày.", false);
+                if (!t) return show("⚠️ Vui lòng chọn thời gian.", false);
+
+                if (t < "09:00" || t > "22:00") {
+                    return show("⚠️ Quán nhận đặt bàn từ 09:00 – 22:00.", false);
+                }
+
+                var selected = new Date(d + "T" + t + ":00");
+                if (isNaN(selected.getTime())) {
+                    return show("⚠️ Ngày/giờ không hợp lệ. Vui lòng chọn lại.", false);
+                }
+                if (selected.getTime() < Date.now()) {
+                    return show("⚠️ Thời gian bạn chọn đã qua. Vui lòng chọn lại.", false);
+                }
+
+                show("✅ Đã nhận yêu cầu đặt bàn: " + g + " người • " + p + " • " + d + " " + t + ". Vui lòng đợi xác nhận.", true);
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var hotline = document.querySelector(".hotline");
+            var msg = document.getElementById("hotlineMsg");
+            if (!hotline) return;
+
+            function show(text) {
+                msg.textContent = text;
+                msg.style.display = "inline-block";
+                msg.style.padding = "6px 10px";
+                msg.style.borderRadius = "10px";
+                msg.style.fontSize = "13px";
+                msg.style.background = "rgba(0,160,90,.12)";
+                msg.style.border = "1px solid rgba(0,160,90,.25)";
+                msg.style.color = "#065f46";
+                setTimeout(function() {
+                    msg.style.display = "none";
+                }, 1500);
+            }
+
+            hotline.addEventListener("click", function(e) {
+                var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+                if (isMobile) {
+                    // 📱 Mobile: để nó gọi bình thường
+                    return;
+                }
+
+                // 💻 PC: chặn tel, copy số
+                e.preventDefault();
+                var phone = hotline.dataset.phone;
+
+                navigator.clipboard.writeText(phone).then(function() {
+                    show("✅ Đã copy số hotline");
+                });
+            });
+        });
+    </script>
+    <script src="../js/reservation.js"></script>
+
+
+
+
+</body>
+
+</html>

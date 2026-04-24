@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giao hàng | Phố Nướng</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/delivery.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="../logotron.ico">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a class="brand" href="../index.html">
+                <span class="brand__text">PHỐ NƯỚNG</span>
+            </a>
+
+            <div class="search">
+                <span class="search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input class="search__input" type="search" placeholder="Bạn muốn ăn gì hôm nay..." aria-label="Tìm kiếm món">
+            </div>
+
+            <div class="header__actions">
+                <!-- ACCOUNT -->
+
+                <div class="account">
+                    <button class="icon-btn account__btn" type="button" aria-haspopup="true" aria-expanded="false">
+      <i class="fa-regular fa-user"></i>
+      <span class="account__caret">▾</span>
+    </button>
+
+                    <div class="account__dropdown" role="menu" aria-label="Tài khoản" hidden>
+                        <div class="account__head">
+                            <div class="account__hello">Chào mừng bạn đến với,</div>
+                            <div class="account__brand">Phố Nướng</div>
+                        </div>
+
+                        <div class="account__actions">
+                            <a href="../html/deliverydangky.html" class="account__primary">Đăng ký</a>
+                            <a href="../html/deliverydangnhap.html" class=" account__ghost">Đăng nhập</a>
+
+                        </div>
+
+                        <div class="account__list">
+                            <a href="#" class="account__item">
+                                <span class="account__icon">😊</span>
+                                <span>Thông tin cá nhân</span>
+                            </a>
+                            <a href="#" class="account__item">
+                                <span class="account__icon">📍</span>
+                                <span>Địa chỉ của tôi</span>
+                            </a>
+                            <a href="#" class="account__item">
+                                <span class="account__icon">🕘</span>
+                                <span>Lịch sử đặt hàng</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a class="header-logo" aria-label="Trang chủ Phố Nướng">
+                    <img src="../img/logo tròn.png" alt="Phố Nướng" />
+                </a>
+                <a href="../html/deliverydangnhap.html" class="icon-btn" aria-label="Giỏ hàng">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <nav class="topbar__nav">
+                <a href="../html/chinhsach.html">Phố Nướng eGift-voucher</a>
+                <a href="../html/chinhsach.html">Chính sách giao hàng</a>
+                <a href="../html/chinhsach.html">Chính sách trả và hoàn tiền</a>
+            </nav>
+
+            <div class="topbar__hotline">
+                Hotline: <strong>19006043</strong>
+            </div>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="container hero__grid">
+            <!-- slider -->
+            <section class="slider">
+                <div class="slider__row">
+                    <div class="slider__viewport">
+                        <div class="slider__main">
+                            <img src="../img/bannerngang.jpg" alt="">
+                            <img src="../img/banner1(1).jpg" alt="">
+                            <img src="../img/banner3.jpg" alt="">
+                        </div>
+
+                        <div class="slider__peek" aria-hidden="true">
+                            <img src="../img/banner-2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="slider__dots" aria-hidden="true">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot dot--active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+            </section>
+
+            <!-- welcome -->
+            <aside class="welcome">
+                <h2 class="welcome__title">We welcome you to<br>Phố Nướng</h2>
+
+                <div class="shop-loc">
+                    <div class="shop-loc__top">
+                        <span class="shop-loc__pin">📍</span>
+
+                        <div class="shop-loc__info">
+                            <div class="shop-loc__name">Phố Nướng Châu Đốc</div>
+                            <div class="shop-loc__addr">
+                                231 Trương Nữ Vương, Phường Châu Đốc, Tỉnh An Giang
+                            </div>
+                            <div class="shop-loc__meta">
+                                <span>⏰ 09:00 – 22:00</span>
+                                <span>☎ 1234567890</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nút mở bản đồ -->
+                    <a class="shop-loc__btn" target="_blank" rel="noopener" href="https://www.google.com/maps/place/231+Tr%C6%B0ng+N%E1%BB%AF+V%C6%B0%C6%A1ng,+Ch%C3%A2u+Ph%C3%BA+B,+Ch%C3%A2u+%C4%90%E1%BB%91c,+An+Giang+90000,+Vi%E1%BB%87t+Nam/@10.7019493,105.1109925,16.53z/data=!4m6!3m5!1s0x310a26b20476dd9f:0xed0a225065c64bbf!8m2!3d10.7023333!4d105.1137121!16s%2Fg%2F11hd1xc2cf?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">
+    Mở bản đồ
+  </a>
+                </div>
+
+            </aside>
+
+        </div>
+    </section>
+    <section class="menu">
+        <div class="container">
+            <h2 class="menu__title">Menu</h2>
+
+            <div class="menu__grid">
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/combo sushi.png" alt=""><span>Sasimi</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/bào ngư nướng phô mai.png" alt=""><span style="font-size: 9px;">Nướng phô mai</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/hải sản nướng.png" alt=""><span style="font-size: 9px;">Hải sản nướng</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/baongu.png" alt=""><span>Khai vị</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/hải sản lẩu.png" alt=""><span style="font-size: 9px;">Hải sản lẩu</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/cuahoangde1.png" alt=""><span>Món chính</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/tráng miệng_mận.png" alt=""><span style="font-size: 9px;">Tráng miệng</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/ốc gai nướng tiêu xanh.jpg" alt=""><span style="font-size: 9px;">Kho tiêu xanh</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/bia tiger.png" alt=""><span>Đồ uống</span></a>
+                <a class="menu__card" href="../html/deliverydangnhap.html"><img src="../img/topping cá viênn nướng.jpg" alt=""><span style="font-size: 9px;">Thêm món</span></a>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="popular">
+        <div class="container container--ratio">
+            <h2 class="popular__title">Phổ biến</h2>
+
+            <div class="popular__grid">
+
+                <!-- 1 -->
+                <article class="product-card">
+                    <span class="product-card__badge">Đáng thử</span>
+
+                    <div class="product-card__image product-media">
+                        <img src="../img/bạch tuột sốt thái.png" alt="Bạch Tuột Sốt Thái">
+                        <video class="product-media__video" muted playsinline preload="metadata">
+            <source src="../img/mucsothai.mp4" type="video/mp4">
+          </video>
+                    </div>
+
+                    <h3 class="product-card__name">Bạch Tuột Sốt Thái</h3>
+                    <div class="product-card__actions">
+                        <button class="product-card__option">4 con</button>
+                        <button class="product-card__add" aria-label="Add to cart"><a href="../html/deliverydangnhap.html">+</a></button>
+                    </div>
+                    <div class="product-card__price">254,000 <span>vnd</span></div>
+                </article>
+
+                <!-- 2 -->
+                <article class="product-card">
+                    <span class="product-card__badge">Đáng thử</span>
+
+                    <div class="product-card__image product-media">
+                        <img src="../img/tôm tươi lột vỏ.png" alt="Tôm Tươi Rong Biển">
+                        <video class="product-media__video" muted playsinline preload="metadata">
+            <source src="../img/tomtuoi.mp4" type="video/mp4">
+          </video>
+                    </div>
+
+                    <h3 class="product-card__name">Tôm Tươi Rong Biển</h3>
+                    <div class="product-card__actions">
+                        <button class="product-card__option">1kg</button>
+                        <button class="product-card__add" aria-label="Add to cart"><a href="../html/deliverydangnhap.html">+</a></button>
+                    </div>
+                    <div class="product-card__price">198,000 <span>vnd</span></div>
+                </article>
+
+                <!-- 3 -->
+                <article class="product-card">
+                    <span class="product-card__badge">Đáng thử</span>
+
+                    <div class="product-card__image product-media">
+                        <img src="../img/combo sushi.png" alt="Combo Sushi">
+                        <video class="product-media__video" muted playsinline preload="metadata">
+            <source src="../img/sashimi.mp4" type="video/mp4">
+          </video>
+                    </div>
+
+                    <h3 class="product-card__name">Combo Sashimi</h3>
+                    <div class="product-card__actions">
+                        <button class="product-card__option">&nbsp;</button>
+                        <button class="product-card__add" aria-label="Add to cart"><a href="../html/deliverydangnhap.html">+</a></button>
+                    </div>
+                    <div class="product-card__price">98,000 <span>vnd</span></div>
+                </article>
+
+                <!-- 4 -->
+                <article class="product-card">
+                    <span class="product-card__badge">Đáng thử</span>
+
+                    <div class="product-card__image product-media">
+                        <img src="../img/hải sản nướng.png" alt="Tôm Nướng Sốt Bơ">
+                        <video class="product-media__video" muted playsinline preload="metadata">
+            <source src="../img/tomsotbo.mp4" type="video/mp4">
+          </video>
+                    </div>
+
+                    <h3 class="product-card__name">Tôm Nướng Sốt Bơ</h3>
+                    <div class="product-card__actions">
+                        <button class="product-card__option">&nbsp;</button>
+                        <button class="product-card__add" aria-label="Add to cart"><a href="../html/deliverydangnhap.html">+</a></button>
+                    </div>
+                    <div class="product-card__price">168,000 <span>vnd</span></div>
+                </article>
+
+                <!-- 5 -->
+                <article class="product-card">
+                    <span class="product-card__badge">Đáng thử</span>
+
+                    <div class="product-card__image product-media">
+                        <img src="../img/hải sản lẩu.png" alt="Hải Sản Lẩu">
+                        <video class="product-media__video" muted playsinline preload="metadata">
+            <source src="../img/lauhaisan.mp4" type="video/mp4">
+          </video>
+                    </div>
+
+                    <h3 class="product-card__name">Hải Sản Lẩu</h3>
+                    <div class="product-card__actions">
+                        <button class="product-card__option">5 loại hải sản</button>
+                        <button class="product-card__add" aria-label="Add to cart"><a href="../html/deliverydangnhap.html">+</a></button>
+                    </div>
+                    <div class="product-card__price">248,000 <span>vnd</span></div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="feedback">
+        <div class="container container--ratio">
+            <div class="feedback__card">
+                <h3 class="feedback__title">Trải nghiệm của bạn với website này ra sao?</h3>
+
+                <div class="feedback__icons">
+                    <button type="button" aria-label="Very bad">😞</button>
+                    <button type="button" aria-label="Bad">🙁</button>
+                    <button type="button" aria-label="Neutral">😐</button>
+                    <button type="button" aria-label="Good">🙂</button>
+                    <button type="button" aria-label="Very good">😄</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__grid">
+            <!-- col 1 -->
+            <div class="footer__col">
+                <div class="footer__brand">
+                    <div class="footer__logo">PHỐ NƯỚNG</div>
+                    <div class="footer__company">Quán nướng & lẩu phục vụ tại chỗ • mang về • giao hàng</div>
+                </div>
+
+                <h4 class="footer__heading">Địa chỉ chi nhánh</h4>
+                <p class="footer__text">
+                    231 Trương Nữ Vương, Phường Châu Đốc,<br> Tỉnh An Giang
+                </p>
+
+                <h4 class="footer__heading">Liên hệ & đặt bàn</h4>
+                <p class="footer__text">
+                    Hotline/Zalo: <a href="tel:1234567890">1234567890</a><br> Đặt bàn trước: Qua điện thoại hoặc Facebook<br> Giờ mở cửa: 09:00 – 22:00 (hằng ngày)
+                </p>
+            </div>
+
+            <!-- col 2 -->
+            <div class="footer__col">
+                <h4 class="footer__heading">Cam kết của Phố Nướng</h4>
+                <p class="footer__text">
+                    • Nguyên liệu tươi mỗi ngày, chế biến tại chỗ.<br> • Đảm bảo vệ sinh an toàn thực phẩm.<br> • Giá rõ ràng, tư vấn món theo nhu cầu nhóm/tiệc.
+                </p>
+
+                <h4 class="footer__heading">Hỗ trợ giao hàng</h4>
+                <p class="footer__text">
+                    Nhận đơn mang về & giao hàng trong khu vực Châu Đốc (tuỳ khoảng cách).<br> Vui lòng liên hệ <a href="tel:1234567890">1234567890</a> để được báo phí và thời gian giao.
+                </p>
+            </div>
+
+            <!-- col 3 -->
+            <div class="footer__col">
+                <h4 class="footer__heading">Điều khoản & chính sách</h4>
+                <ul class="footer__links">
+                    <li><a href="../html/chinhsach.html">Điều khoản & điều kiện sử dụng</a></li>
+                    <li><a href="../html/chinhsach.html">Chính sách thanh toán</a></li>
+                    <li><a href="../html/chinhsach.html">Chính sách bảo mật thông tin</a></li>
+                </ul>
+
+                <h4 class="footer__heading">Dịch vụ khách hàng</h4>
+                <ul class="footer__links">
+                    <li><a href="../html/chinhsach.html">Chính sách đặt bàn</a></li>
+                    <li><a href="../html/chinhsach.html">Chính sách hủy / đổi lịch đặt bàn</a></li>
+                    <li><a href="../html/chinhsach.html">Chính sách mang về & giao hàng</a></li>
+                </ul>
+            </div>
+
+            <!-- col 4 -->
+            <div class="footer__col footer__col--right">
+                <h4 class="footer__heading">Nhận ưu đãi & cập nhật mới từ Phố Nướng</h4>
+
+                <form class="footer__subscribe" action="#" method="post">
+                    <input class="footer__input" type="email" placeholder="Nhập email của bạn" required>
+                    <button class="footer__btn" type="submit">Đăng ký</button>
+                </form>
+
+                <h4 class="footer__heading">Theo dõi Phố Nướng</h4>
+
+                <div class="footer__right-row">
+                    <div class="footer__social">
+                        <!-- đổi href thành link thật của bạn -->
+                        <a class="social" href="https://www.facebook.com/share/1EkKe6ibhA/?mibextid=wwXIfr" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                        <a class="social" href="https://www.google.com/maps/place/231+Tr%C6%B0ng+N%E1%BB%AF+V%C6%B0%C6%A1ng,+Ch%C3%A2u+Ph%C3%BA+B,+Ch%C3%A2u+%C4%90%E1%BB%91c,+An+Giang+90000,+Vi%E1%BB%87t+Nam/@10.7019493,105.1109925,16.53z/data=!4m6!3m5!1s0x310a26b20476dd9f:0xed0a225065c64bbf!8m2!3d10.7023333!4d105.1137121!16s%2Fg%2F11hd1xc2cf?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                            aria-label="Định vị"><i class="fa-solid fa-location-dot"></i></a>
+                        <a class="social" href="https://www.tiktok.com/@tiktokthanhtam2308?_r=1&_t=ZS-92PVz890QcR" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></i></a>
+                    </div>
+
+                    <div class="footer__badge">
+                        <!-- Nếu bạn KHÔNG có đăng ký Bộ Công Thương thật thì nên bỏ khối này -->
+                        <img src="../img/logo.jpg" alt="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container footer__bottom-inner">
+                © 2025 Phố Nướng — Châu Đốc, An Giang. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../js/delivery.js"></script>
+</body>
+
+</html>

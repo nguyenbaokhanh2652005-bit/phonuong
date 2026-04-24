@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phố Nướng</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="logotron.ico">
+</head>
+
+<body>
+    <!-- LOADING OVERLAY -->
+    <div id="loadingOverlay" class="loading-overlay" aria-hidden="false">
+        <video class="loading-video" autoplay muted loop playsinline preload="auto">
+    <source src="loadingbien.mp4" type="video/mp4" />
+  </video>
+        <div class="loading-content">
+            <div class="loading-text">L🐟ading</div>
+        </div>
+    </div>
+
+    <section class="hero">
+        <!-- NỀN (video hoặc ảnh) -->
+        <video class="hero__bg" autoplay muted loop playsinline>
+  <source src="img/danhbat.mp4" type="video/mp4">
+</video>
+
+        <!-- LỚP PHỦ TỐI -->
+        <div class="hero__overlay"></div>
+
+        <!-- HEADER NẰM ĐÈ LÊN NỀN -->
+        <header class="header">
+            <div class="container header__inner">
+                <div class="brand">
+                    <div class="brand__logo">PHỐ NƯỚNG</div>
+                    <div class="brand__country">VIETNAM</div>
+                </div>
+
+                <nav class="nav">
+                    <a href="html/reservation.html"><i class="fa-regular fa-calendar"></i>Đặt Bàn</a>
+                    <a href="html/delivery.html"><i class="fa-solid fa-cart-shopping"></i> Giao Hàng</a>
+                    <a href="html/career.html"><i class="fa-sharp fa-solid fa-mobile"></i> Tuyển Dụng</a>
+                </nav>
+
+                <div class="header__right">
+                    <div class="lang-switch" id="langSwitch">
+                        <button class="lang-btn" id="langBtn" type="button" aria-expanded="false">
+                             <span id="langCurrent">VN</span>
+                             <span class="lang-caret">▾</span>
+                             </button>
+                        <div class="lang-menu" id="langMenu" role="menu">
+                            <button class="lang-item" type="button" data-lang="vi">VN</button>
+                            <button class="lang-item" type="button" data-lang="en">EN</button>
+                        </div>
+                    </div>
+                    <button class="burger" aria-label="Logo Phố Nướng" type="button">
+  <img class="logo-spin" src="img/logo tròn.png" alt="Logo Phố Nướng">
+</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- NỘI DUNG HERO -->
+        <div class="container hero__content">
+            <!-- CỘT TRÁI -->
+            <div class="countries">
+                <a class="countries__item" href="#">Japan</a>
+                <a class="countries__item is-active" href="#">Vietnam</a>
+                <a class="countries__item" href="#">Cambodia</a>
+                <a class="countries__item" href="#">Korean</a>
+                <a class="countries__item" href="#">Thailan</a>
+            </div>
+
+            <!-- BADGE DƯỚI PHẢI -->
+            <div class="badge">
+                <div class="badge__left">
+                    <div class="badge__title">HẢI SẢN PHỐ NƯỚNG!!!</div>
+                    <div class="badge__sub">Tươi mát – Nồng cháy</div>
+                </div>
+                <div class="badge__right">
+                    <div class="badge__text">Hải sản được chọn lọc kỹ lưỡng, chế biến trực tiếp tại quán, giữ trọn vị tươi ngon và hương vị biển cả.</div>
+                    <!-- <a class="badge__link" href="#">Learn more</a> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+
+
+</html>

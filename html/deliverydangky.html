@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo tài khoản | Phố Nướng</title>
+
+    <!-- Header/Topbar style chung (nếu bạn đang dùng) -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <!-- CSS trang đăng ký (CSS mình đã soạn trước đó) -->
+    <link rel="stylesheet" href="../css/deliverydangky.css" />
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../logotron.ico">
+</head>
+
+<body>
+    <!-- =========================
+       HEADER (giống vibe Pizza 4P’s)
+  ========================== -->
+    <header class="header">
+        <div class="container">
+            <a class="brand" href="../html/delivery.html" aria-label="Về trang giao hàng">PHỐ NƯỚNG</a>
+
+            <div class="header__right">
+                <div>Đường dây nóng: <a href="tel:19006043">1234567890</a></div>
+                <a class="lang-logo-btn" aria-label="">
+                    <img src="../img/logo tròn.png" alt="">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================
+       REGISTER PAGE
+  ========================== -->
+    <main class="auth-page">
+        <section class="auth-card" aria-label="Form tạo tài khoản">
+            <h1 class="auth-title">Tạo tài khoản</h1>
+
+            <form class="auth-form" id="registerForm" novalidate>
+                <!-- * Biệt danh -->
+                <div class="field">
+                    <input id="nickname" name="nickname" type="text" placeholder="* Biệt danh" autocomplete="nickname" />
+                    <span class="error" data-for="nickname"></span>
+                </div>
+
+                <!-- * Tên và chữ lót -->
+                <div class="field">
+                    <input id="firstName" name="firstName" type="text" placeholder="* Tên và chữ lót" autocomplete="given-name" />
+                    <span class="error" data-for="firstName"></span>
+                </div>
+
+                <!-- * Họ -->
+                <div class="field">
+                    <input id="lastName" name="lastName" type="text" placeholder="* Họ" autocomplete="family-name" />
+                    <span class="error" data-for="lastName"></span>
+                </div>
+
+                <!-- * Email -->
+                <div class="field">
+                    <input id="email" name="email" type="email" placeholder="* Địa chỉ email" autocomplete="email" />
+                    <span class="error" data-for="email"></span>
+                </div>
+
+                <!-- * Mật khẩu -->
+                <div class="field">
+                    <input id="password" name="password" type="password" placeholder="* Mật khẩu" autocomplete="new-password" />
+                    <span class="error" data-for="password"></span>
+                </div>
+
+                <!-- * Xác nhận mật khẩu -->
+                <div class="field">
+                    <input id="confirmPassword" name="confirmPassword" type="password" placeholder="* Xác nhận mật khẩu" autocomplete="new-password" />
+                    <span class="error" data-for="confirmPassword"></span>
+                </div>
+
+                <!-- 2 cột: Giới tính + Ngày sinh (giống ảnh) -->
+                <div class="row-2">
+                    <!-- * Giới tính -->
+                    <div class="field">
+                        <select id="gender" name="gender">
+              <option value="">* Giới tính</option>
+              <option value="male">Nam</option>
+              <option value="female">Nữ</option>
+              <option value="other">Khác</option>
+            </select>
+                        <span class="error" data-for="gender"></span>
+                    </div>
+
+                    <!-- * Ngày sinh -->
+                    <div class="field">
+                        <input id="dob" name="dob" type="date" placeholder="* Ngày sinh" />
+                        <span class="error" data-for="dob"></span>
+                    </div>
+                </div>
+
+
+                <!-- Nút đăng ký -->
+                <button class="auth-submit" type="submit">Đăng ký</button>
+
+                <!-- Note điều khoản -->
+                <div class="auth-note">
+                    Để đăng ký tài khoản, tôi đồng ý với
+                    <a href="#" target="_blank" rel="noopener">Chính sách và quy định chung</a>
+                </div>
+
+                <!-- Link đăng nhập -->
+                <div class="auth-bottom">
+                    Đã có tài khoản rồi? <a href="../html/deliverydangnhap.html">Đăng nhập</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- JS validate + lưu localStorage (file auth.js bạn tạo theo hướng dẫn) -->
+    <script src="../js/deliverydangky.js"></script>
+</body>
+
+</html>

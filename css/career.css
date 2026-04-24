@@ -1,0 +1,537 @@
+/* =====================================================
+   FILE: base.css
+   MÔ TẢ: Reset + Container dùng chung cho mọi trang
+   ===================================================== */
+
+
+/* ===============================
+   RESET CƠ BẢN
+   =============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: var(--bg);
+}
+
+
+/* ====== THÊM: tránh video/img gây hở nền + reset form mặc định ====== */
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* ================================================================ */
+
+
+/* ===============================
+   CONTAINER DÙNG CHUNG
+   =============================== */
+
+.container {
+    width: min(1200px, calc(100% - 96px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   FILE: index.css
+   PAGE: INDEX
+   MÔ TẢ: CSS chỉ dùng cho trang chủ (index.html)
+   ===================================================== */
+
+
+/* ===============================
+   HERO (FULL MÀN + VIDEO BG)
+   =============================== */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+/* ====== THÊM: đảm bảo full màn kể cả khi 100vh lệch trên vài máy ====== */
+
+.hero {
+    min-height: 100vh;
+}
+
+
+/* ===================================================================== */
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background: #0b1220;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 2;
+}
+
+
+/* ===============================
+   HEADER (TRANG CHỦ - NẰM TRÊN HERO)
+   =============================== */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding: 22px 0;
+}
+
+
+/* ====== THÊM: cho dropdown xổ ra không bị cắt ====== */
+
+.header,
+.header__right {
+    overflow: visible;
+}
+
+
+/* =================================================== */
+
+.header__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-family: 'Playfair Display', serif;
+}
+
+.brand__logo {
+    font-size: 23px;
+    letter-spacing: 5px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+    /* ❌ bỏ gạch chân */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+}
+
+.brand__logo:hover {
+    opacity: .85;
+    /* hover nhẹ cho có cảm giác click */
+}
+
+.brand__country {
+    opacity: .85;
+    font-size: 12px;
+    letter-spacing: .12em;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+
+/* ====== THÊM: canh icon + chữ đẹp, không dính, không lệch ====== */
+
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav a i {
+    font-size: 16px;
+    opacity: .95;
+}
+
+
+/* ================================================================ */
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: .18em;
+    font-size: 20px;
+    opacity: .95;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* =====================================================
+   LANGUAGE DROPDOWN (EN/VN)
+   ===================================================== */
+
+.lang-switch {
+    position: relative;
+    display: inline-flex;
+}
+
+.lang-btn {
+    color: #fff;
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.lang-caret {
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+
+/* menu xổ xuống */
+
+.lang-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    display: none;
+    min-width: 64px;
+    z-index: 99999;
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    padding: 6px;
+}
+
+
+/* item EN/VN */
+
+.lang-item {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: .12em;
+    border-radius: 8px;
+}
+
+.lang-item:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+
+/* trạng thái mở */
+
+.lang-switch.is-open .lang-menu {
+    display: block;
+}
+
+.lang-switch.is-open .lang-caret {
+    transform: rotate(180deg);
+}
+
+
+/* ===============================
+   BUTTONS (LANG + BURGER)
+   =============================== */
+
+.lang,
+.burger {
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.burger {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+
+/* ===============================
+   HERO CONTENT (COUNTRIES + BADGE)
+   =============================== */
+
+.hero__content {
+    position: relative;
+    height: 100%;
+    z-index: 4;
+}
+
+.countries {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-25%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.countries__item {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .45);
+    font-size: 45px;
+    line-height: 1;
+    transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+    transform-origin: left center;
+}
+
+
+/* Khi hover vào khối countries → làm mờ các item khác */
+
+.countries:hover .countries__item {
+    opacity: 0.35;
+}
+
+
+/* Nhưng item đang hover thì vẫn rõ */
+
+.countries:hover .countries__item:hover {
+    opacity: 1;
+}
+
+
+/* Hover item đang trỏ */
+
+.countries__item:hover {
+    color: #ffffff;
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.countries__item.is-active {
+    color: #fff;
+}
+
+
+/* ===============================
+   BADGE TUYỂN DỤNG – FINAL CLEAN
+=============================== */
+
+.badge {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    width: 560px;
+    /* nhỏ gọn */
+    background: #015e91;
+    color: #fff;
+    padding: 20px 22px;
+    border-radius: 14px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .3);
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 18px;
+}
+
+
+/* LEFT */
+
+.badge__title {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 900;
+    line-height: 1.05;
+}
+
+.badge__sub {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: .9;
+}
+
+.badge__desc {
+    margin: 8px 0 0;
+    font-size: 13.5px;
+    line-height: 1.45;
+    opacity: .9;
+}
+
+
+/* RIGHT – FORM */
+
+.recruit-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recruit-form__input,
+.recruit-form__select,
+.recruit-form__submit {
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+
+/* INPUT */
+
+.recruit-form__input,
+.recruit-form__select {
+    padding: 0 12px;
+    border: none;
+    background: #fff;
+    color: #003049;
+}
+
+
+/* BUTTON */
+
+.recruit-form__submit {
+    border: none;
+    background: #fff;
+    color: #003049;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+
+/* MESSAGE */
+
+.form-error,
+.form-msg {
+    display: none;
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+.form-error {
+    background: rgba(255, 0, 0, .15);
+    color: #ffdada;
+}
+
+.form-msg {
+    background: rgba(0, 160, 90, .2);
+    color: #d4ffdf;
+}
+
+.form-error.show,
+.form-msg.show {
+    display: block;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+    .badge {
+        position: static;
+        width: auto;
+        grid-template-columns: 1fr;
+        margin: 16px;
+    }
+}
+
+
+/* ===============================
+   THU NHỎ BADGE GẤP 2 LẦN
+=============================== */
+
+.badge {
+    transform: scale(0.7);
+    /* 👈 NHỎ GẤP 2 */
+    transform-origin: bottom right;
+    /* giữ góc phải dưới */
+}
+
+.badge__title {
+    font-size: 20px;
+}
+
+
+/* Bù lại vị trí để không tụt quá xa */
+
+.badge {
+    right: 16px;
+    bottom: 16px;
+}
+
+
+/*LOGO */
+
+.burger {
+    width: 60px;
+    /* tăng khung */
+    height: 60px;
+    background-size: 40px 40px;
+    /* tăng hình */
+}
+
+.burger:hover img {
+    transform: scale(1.08);
+    transition: transform .15s ease;
+}
+
+.burger img {
+    width: 44px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    animation: burgerSpin 6s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes burgerSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

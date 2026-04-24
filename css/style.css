@@ -1,0 +1,492 @@
+/* =====================================================
+   FILE: base.css
+   MÔ TẢ: Reset + Container dùng chung cho mọi trang
+   ===================================================== */
+
+
+/* ===============================
+   RESET CƠ BẢN
+   =============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+    background: var(--bg);
+}
+
+
+/* ====== THÊM: tránh video/img gây hở nền + reset form mặc định ====== */
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* ================================================================ */
+
+
+/* ===============================
+   CONTAINER DÙNG CHUNG
+   =============================== */
+
+.container {
+    width: min(1200px, calc(100% - 96px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   FILE: index.css
+   PAGE: INDEX
+   MÔ TẢ: CSS chỉ dùng cho trang chủ (index.html)
+   ===================================================== */
+
+
+/* ===============================
+   HERO (FULL MÀN + VIDEO BG)
+   =============================== */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+
+/* ====== THÊM: đảm bảo full màn kể cả khi 100vh lệch trên vài máy ====== */
+
+.hero {
+    min-height: 100vh;
+}
+
+
+/* ===================================================================== */
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background: #0b1220;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    z-index: 2;
+}
+
+
+/* ===============================
+   HEADER (TRANG CHỦ - NẰM TRÊN HERO)
+   =============================== */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    padding: 22px 0;
+}
+
+
+/* ====== THÊM: cho dropdown xổ ra không bị cắt ====== */
+
+.header,
+.header__right {
+    overflow: visible;
+}
+
+
+/* =================================================== */
+
+.header__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 24px;
+}
+
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    font-family: 'Playfair Display SC', serif;
+    font-weight: 700;
+}
+
+.brand__logo {
+    letter-spacing: .28em;
+    font-weight: 700;
+    white-space: nowrap;
+    font-size: 24px;
+}
+
+.brand__country {
+    opacity: .85;
+    font-size: 12px;
+    letter-spacing: .12em;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+}
+
+
+/* ====== THÊM: canh icon + chữ đẹp, không dính, không lệch ====== */
+
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav a i {
+    font-size: 16px;
+    opacity: .95;
+}
+
+
+/* ================================================================ */
+
+.nav a {
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: .18em;
+    font-size: 20px;
+    opacity: .95;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* =====================================================
+   LANGUAGE DROPDOWN (EN/VN)
+   ===================================================== */
+
+.lang-switch {
+    position: relative;
+    display: inline-flex;
+}
+
+.lang-btn {
+    color: #fff;
+    background: transparent;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.lang-caret {
+    display: inline-block;
+    transition: transform .2s ease;
+}
+
+
+/* menu xổ xuống */
+
+.lang-menu {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    display: none;
+    min-width: 64px;
+    z-index: 99999;
+    background: rgba(0, 0, 0, .45);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    padding: 6px;
+}
+
+
+/* item EN/VN */
+
+.lang-item {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    padding: 8px 10px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: .12em;
+    border-radius: 8px;
+}
+
+.lang-item:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+
+/* trạng thái mở */
+
+.lang-switch.is-open .lang-menu {
+    display: block;
+}
+
+.lang-switch.is-open .lang-caret {
+    transform: rotate(180deg);
+}
+
+
+/* ===============================
+   BUTTONS (LANG + BURGER)
+   =============================== */
+
+.lang,
+.burger {
+    color: #fff;
+    background: transparent;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.burger {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+
+/* ===============================
+   HERO CONTENT (COUNTRIES + BADGE)
+   =============================== */
+
+.hero__content {
+    position: relative;
+    height: 100%;
+    z-index: 4;
+}
+
+.countries {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-25%);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.countries__item {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .45);
+    font-size: 45px;
+    line-height: 1;
+    transition: transform 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+    transform-origin: left center;
+}
+
+
+/* Khi hover vào khối countries → làm mờ các item khác */
+
+.countries:hover .countries__item {
+    opacity: 0.35;
+}
+
+
+/* Nhưng item đang hover thì vẫn rõ */
+
+.countries:hover .countries__item:hover {
+    opacity: 1;
+}
+
+
+/* Hover item đang trỏ */
+
+.countries__item:hover {
+    color: #ffffff;
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.countries__item.is-active {
+    color: #fff;
+}
+
+.badge {
+    position: absolute;
+    right: 0;
+    bottom: 32px;
+    width: 340px;
+    max-width: min(340px, 100%);
+    background: #066ca3;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 10px;
+}
+
+
+/* ===== CỘT TRÁI ===== */
+
+.badge__title {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+.badge__sub {
+    margin-top: 4px;
+    opacity: .9;
+    font-size: 10px;
+}
+
+
+/* ===== CỘT PHẢI ===== */
+
+.badge__text {
+    opacity: .95;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.badge__link {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 10px;
+    color: #fff;
+    opacity: .9;
+}
+
+
+/* ===============================
+   RESPONSIVE (INDEX)
+   =============================== */
+
+@media (max-width: 820px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+    .nav {
+        display: none;
+    }
+    .countries__item {
+        font-size: 44px;
+    }
+    .badge {
+        left: 0;
+        right: 0;
+        width: auto;
+        grid-template-columns: 140px 1fr;
+        bottom: 16px;
+    }
+}
+
+
+/* =====================================================
+   FILE: loading.css
+   MÔ TẢ: Loading overlay video (dùng cho mọi trang)
+   ===================================================== */
+
+.loading-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background: #f4f1ea;
+    overflow: hidden;
+}
+
+.loading-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.loading-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.loading-text {
+    font-size: 64px;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 1px;
+    color: #337fa0;
+}
+
+.loading-overlay.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+}
+
+
+/*LOGO */
+
+.burger {
+    width: 60px;
+    /* tăng khung */
+    height: 60px;
+    background-size: 40px 40px;
+    /* tăng hình */
+}
+
+.burger:hover img {
+    transform: scale(1.08);
+    transition: transform .15s ease;
+}
+
+.logo-spin {
+    display: block !important;
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    animation: logoSpin 2.5s linear infinite !important;
+    /* CHỐT HẠ */
+    transform-origin: center !important;
+    will-change: transform;
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

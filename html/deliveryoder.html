@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt món | Phố Nướng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/deliveryoder.css" />
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="../logotron.ico">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header__inner">
+            <a class="brand" href="../index.html" aria-label="Trang chủ">
+                <span class="brand__text">PHỐ NƯỚNG</span>
+            </a>
+
+            <div class="search">
+                <span class="search__icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input class="search__input" type="search" placeholder="Tìm món ăn, đồ uống..." aria-label="Tìm kiếm món">
+            </div>
+
+            <div class="header__actions">
+                <!-- Account -->
+                <div class="account">
+                    <button class="icon-btn account__btn" type="button" aria-haspopup="true" aria-expanded="false"><i class="fa-regular fa-user"></i> <span class="account__caret">▾</span>
+          </button>
+
+                    <div class="account__dropdown" hidden>
+                        <div class="account__head">
+                            <div class="account__hello">Chào mừng bạn đến với,</div>
+                            <div class="account__brand" id="accountName">Phố Nướng</div>
+                        </div>
+
+                        <div class="account__actions">
+                            <a class="account__link account__link--primary" href="./deliverydangky.html">Đăng ký</a>
+                            <a class="account__link account__link--ghost" href="./deliverydangnhap.html">Đăng nhập</a>
+                        </div>
+
+                        <div class="account__list" id="accountLinks">
+                            <a class="account__item" href="#" id="btnProfile">
+                                <span class="account__icon">😊</span>
+                                <span>Thông tin cá nhân</span>
+                            </a>
+
+                            <a class="account__item" href="#" id="btnAddress">
+                                <span class="account__icon">📍</span>
+                                <span>Địa chỉ của tôi</span>
+                            </a>
+
+                            <a class="account__item" href="#" id="btnOrders">
+                                <span class="account__icon">🕘</span>
+                                <span>Lịch sử đặt hàng</span>
+                            </a>
+                        </div>
+
+                        <button class="account__logout" type="button" id="btnLogout" hidden>
+        Đăng xuất
+    </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Language -->
+            <button class="lang-btn" type="button" aria-label="Change language">
+  <img src="../img/logo tròn.png" alt="Language" class="lang-logo">
+</button>
+
+            <!-- Cart icon -->
+            <button class="icon-btn" type="button" aria-label="Cart"><i class="fa-solid fa-cart-shopping"></i></button>
+        </div>
+        </div>
+    </header>
+    <section class="menu">
+        <div class="container">
+            <h2 class="menu__title">Menu</h2>
+
+            <div class="menu__grid menu__grid--cats" id="catMenu">
+                <button class="menu__card is-active" type="button" data-filter="all"><span>Tất cả</span></button>
+                <button class="menu__card" type="button" data-filter="sashimi"><span>Sashimi</span></button>
+                <button class="menu__card" type="button" data-filter="pho-mai"><span>Nướng phô mai</span></button>
+                <button class="menu__card" type="button" data-filter="hai-san-nuong"><span>Hải sản nướng</span></button>
+                <button class="menu__card" type="button" data-filter="khai-vi"><span>Khai vị</span></button>
+                <button class="menu__card" type="button" data-filter="lau"><span>Hải sản lẩu</span></button>
+                <button class="menu__card" type="button" data-filter="mon-chinh"><span>Món chính</span></button>
+                <button class="menu__card" type="button" data-filter="trang-mieng"><span>Tráng miệng</span></button>
+                <button class="menu__card" type="button" data-filter="kho-tieu"><span>Kho tiêu xanh</span></button>
+                <button class="menu__card" type="button" data-filter="do-uong"><span>Đồ uống</span></button>
+                <button class="menu__card" type="button" data-filter="them-mon"><span>Thêm món</span></button>
+            </div>
+            <div class="cats-scrollbar">
+                <div class="cats-scrollbar__track">
+                    <div class="cats-scrollbar__thumb"></div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+    <!-- MAIN -->
+    <main class="order">
+        <div class="container order__grid">
+            <!-- LEFT: MENU -->
+            <section class="menu" aria-label="Danh sách món">
+                <div class="menu__grid menu__grid--products" id="menuGrid">
+                    <!-- ================= SASHIMI (3) ================= -->
+                    <article class="menu-card" data-id="sa1" data-cat="sashimi" data-name="Sashimi Râu Bạch Tuột" data-price="189000" data-img="../img/combosasimi.png">
+                        <div class="menu-card__img">
+                            <img src="../img/combosasimi.png" alt="combosasimi" loading="lazy" onerror="this.src='../img/combosasimi.png'">
+                        </div>
+                        <h3 class="menu-card__name">Sashimi Râu Bạch Tuột </h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">389.000<span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="sa2" data-cat="sashimi" data-name="Sashimi" data-price="169000" data-img="../img/sushi.png">
+                        <div class="menu-card__img">
+                            <img src="../img/sushi.png" alt="Sashimi bạch tuộc" loading="lazy" onerror="this.src='../img/sushi.png'">
+                        </div>
+                        <h3 class="menu-card__name">Sashimi Cá Hồi </h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">169.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="sa3" data-cat="sashimi" data-name="Sashimi tổng hợp" data-price="249000" data-img="../img/tomtuoisasimi.jpg">
+                        <div class="menu-card__img">
+                            <img src="../img/tomtuoisasimi.jpg" alt="Sashimi" loading="lazy" onerror="this.src='../img/tomtuoisasimi.jpg'">
+                        </div>
+                        <h3 class="menu-card__name">Sashimi Tôm Hùm</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">249.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= NƯỚNG PHÔ MAI (3) ================= -->
+                    <article class="menu-card" data-id="pm1" data-cat="pho-mai" data-name="Tôm mủ ni nướng phô mai" data-price="299000" data-img="../img/tôm mủ ni nướng phô mai.png">
+                        <div class="menu-card__img">
+                            <img src="../img/tôm mủ ni nướng phô mai.png" alt="phomai" loading="lazy" onerror="this.src='../img/tôm mủ ni nướng phô mai.png'">
+                        </div>
+                        <h3 class="menu-card__name">Tôm mủ ni nướng phô mai</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">299.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="pm2" data-cat="pho-mai" data-name="phomai" data-price="189000" data-img="../img/tôm hùm nướng phô mai.png">
+                        <div class="menu-card__img">
+                            <img src="../img/tôm hùm nướng phô mai.png" alt="phomai" loading="lazy" onerror="this.src='../img/tôm hùm nướng phô mai.png'">
+                        </div>
+                        <h3 class="menu-card__name">Tôm hùm nướng phô mai</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">189.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="pm3" data-cat="pho-mai" data-name="phomai" data-price="159000" data-img="../img/bào ngư nướng phô mai.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bào ngư nướng phô mai.png" alt="phomai" loading="lazy" onerror="this.src='../img/bào ngư nướng phô mai.png'">
+                        </div>
+                        <h3 class="menu-card__name">Bào ngư nướng phô mai</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">159.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= HẢI SẢN NƯỚNG (3) ================= -->
+                    <article class="menu-card" data-id="hsn1" data-cat="hai-san-nuong" data-name="Hải Sản Nướng" data-price="254000" data-img="../img/hải sản nướng.png">
+                        <div class="menu-card__img">
+                            <img src="../img/hải sản nướng.png" alt="haisannuong" loading="lazy" onerror="this.src='../img/hải sản nướng.png'">
+                        </div>
+                        <h3 class="menu-card__name">Hải Sản Nướng</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">254.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="hsn2" data-cat="hai-san-nuong" data-name="Hải sản nướng tổng hợp" data-price="279000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Hải sản nướng tổng hợp" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Hải sản nướng tổng hợp</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">279.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="hsn3" data-cat="hai-san-nuong" data-name="Cua nướng sốt bơ tỏi" data-price="329000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Cua nướng sốt bơ tỏi" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Cua nướng sốt bơ tỏi</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">329.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= KHAI VỊ (3) ================= -->
+                    <article class="menu-card" data-id="kv1" data-cat="khai-vi" data-name="Chả giò" data-price="59000" data-img="../img/khai vị chả giò.png">
+                        <div class="menu-card__img">
+                            <img src="../img/khai vị chả giò.png" alt="chagio" loading="lazy" onerror="this.src='../img/khai vị chả giò.png'">
+                        </div>
+                        <h3 class="menu-card__name">Chả giò</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">59.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="kv2" data-cat="khai-vi" data-name="Khoai tây lắc phô mai" data-price="49000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Khoai tây lắc phô mai" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Khoai tây lắc phô mai</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">49.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="kv3" data-cat="khai-vi" data-name="Súp hải sản" data-price="69000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Súp hải sản" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Súp hải sản</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">69.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= HẢI SẢN LẨU (3) ================= -->
+                    <article class="menu-card" data-id="lau1" data-cat="lau" data-name="Lẩu hải sản thập cẩm" data-price="248000" data-img="../img/combolau.jpg">
+                        <div class="menu-card__img">
+                            <img src="../img/combolau.jpg" alt="combolau" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Lẩu hải sản thập cẩm</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">248.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="lau2" data-cat="lau" data-name="Lẩu Thái chua cay" data-price="229000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Lẩu Thái chua cay" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Lẩu Thái chua cay</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">229.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="lau3" data-cat="lau" data-name="Lẩu nấm hải sản" data-price="239000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Lẩu nấm hải sản" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Lẩu nấm hải sản</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">239.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= MÓN CHÍNH (3) ================= -->
+                    <article class="menu-card" data-id="m1" data-cat="mon-chinh" data-name="Cá Chép Ôm Dưa" data-price="150000" data-img="../img/món chính_ cá chép ôm dưa.png">
+                        <div class="menu-card__img">
+                            <img src="../img/món chính_ cá chép ôm dưa.png" alt="monchinh" loading="lazy" onerror="this.src='../img/món chính_ cá chép ôm dưa.png'">
+                        </div>
+                        <h3 class="menu-card__name">Cá Chép Ôm Dưa</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">350.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="m2" data-cat="mon-chinh" data-name="Mì Ý nghêu và sốt quế tây" data-price="165000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Mì Ý nghêu và sốt quế tây" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Mì Ý nghêu và sốt quế tây</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">165.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="m3" data-cat="mon-chinh" data-name="Mì Ý bò bằm và phô mai hun khói" data-price="168000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Mì Ý bò bằm và phô mai hun khói" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Mì Ý bò bằm và phô mai hun khói</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">168.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= TRÁNG MIỆNG (3) ================= -->
+                    <article class="menu-card" data-id="tm1" data-cat="trang-mieng" data-name="Hồng Giòn" data-price="59000" data-img="../img/Tráng miệng_ Hồng giòn.png">
+                        <div class="menu-card__img">
+                            <img src="../img/Tráng miệng_ Hồng giòn.png" alt="Panna cotta" loading="lazy" onerror="this.src='../img/Tráng miệng_ Hồng giòn.png'">
+                        </div>
+                        <h3 class="menu-card__name">Hồng Giòn</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">59.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="tm2" data-cat="trang-mieng" data-name="Trái cây theo mùa" data-price="49000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Trái cây theo mùa" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Trái cây theo mùa</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">49.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="tm3" data-cat="trang-mieng" data-name="Kem vani" data-price="45000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Kem vani" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Kem vani</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">45.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= KHO TIÊU XANH (3) ================= -->
+                    <article class="menu-card" data-id="kt1" data-cat="kho-tieu" data-name="Cá Hồi Sốt Tiêu Xanh" data-price="129000" data-img="../img/cá hồi sốt tiêu xanh.png">
+                        <div class="menu-card__img">
+                            <img src="../img/cá hồi sốt tiêu xanh.png" alt="cahoisottieuxanh" loading="lazy" onerror="this.src='../img/cá hồi sốt tiêu xanh.png'">
+                        </div>
+                        <h3 class="menu-card__name">Cá Hồi Sốt Tiêu Xanh</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">129.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="kt2" data-cat="kho-tieu" data-name="Tôm kho tiêu xanh" data-price="169000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Tôm kho tiêu xanh" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Tôm kho tiêu xanh</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">169.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="kt3" data-cat="kho-tieu" data-name="Bạch tuộc kho tiêu xanh" data-price="189000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Bạch tuộc kho tiêu xanh" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Bạch tuộc kho tiêu xanh</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">189.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= ĐỒ UỐNG (3) ================= -->
+                    <article class="menu-card" data-id="du1" data-cat="do-uong" data-name="Trà Đào Cam Xả" data-price="25000" data-img="../img/nước uống trà đào cam xả.jpg">
+                        <div class="menu-card__img">
+                            <img src="../img/nước uống trà đào cam xả.jpg" alt="Bia Tiger" loading="lazy" onerror="this.src='../img/nước uống trà đào cam xả.jpg'">
+                        </div>
+                        <h3 class="menu-card__name">Trà Đào Cam Xả</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">25.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="du2" data-cat="do-uong" data-name="Nước suối" data-price="15000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Nước suối" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Nước suối</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">15.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="du3" data-cat="do-uong" data-name="Trà tắc" data-price="20000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Trà tắc" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Trà tắc</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">20.000 <span>vnd</span></div>
+                    </article> -->
+
+
+                    <!-- ================= THÊM MÓN (3) ================= -->
+                    <article class="menu-card" data-id="t1" data-cat="them-mon" data-name="Sò Điệp Nướng" data-price="15000" data-img="../img/toping sò điệp nướng.jpg">
+                        <div class="menu-card__img">
+                            <img src="../img/toping sò điệp nướng.jpg" alt="Rau thêm" loading="lazy" onerror="this.src='../img/toping sò điệp nướng.jpg'">
+                        </div>
+                        <h3 class="menu-card__name">Sò Điệp Nướng</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">1con/35.000 <span>vnd</span></div>
+                    </article>
+
+                    <!-- <article class="menu-card" data-id="t2" data-cat="them-mon" data-name="Mì thêm" data-price="15000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Mì thêm" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Mì thêm</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">15.000 <span>vnd</span></div>
+                    </article>
+
+                    <article class="menu-card" data-id="t3" data-cat="them-mon" data-name="Phô mai thêm" data-price="25000" data-img="../img/bachtuot.png">
+                        <div class="menu-card__img">
+                            <img src="../img/bachtuot.png" alt="Phô mai thêm" loading="lazy" onerror="this.src='../img/bachtuot.png'">
+                        </div>
+                        <h3 class="menu-card__name">Phô mai thêm</h3>
+                        <button class="menu-card__add" type="button" aria-label="Thêm món">+</button>
+                        <div class="menu-card__price">25.000 <span>vnd</span></div>
+                    </article>-->
+                </div>
+            </section>
+
+
+            <!-- RIGHT: CART -->
+            <aside class="cart cart--corner" aria-label="Giỏ hàng">
+                <h2 class="cart__title">Giỏ hàng của tôi</h2>
+
+                <div class="cart__panel">
+                    <!-- Empty state -->
+                    <div class="cart__empty" id="cartEmpty">
+                        <div class="cart__empty-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <div class="cart__empty-text">Giỏ hàng của bạn đang trống</div>
+                    </div>
+
+                    <!-- Items -->
+                    <div class="cart__items" id="cartItems"></div>
+                </div>
+
+                <div class="cart__summary">
+                    <div class="cart__row">
+                        <span>Tổng</span>
+                        <strong id="cartTotal">0 vnd</strong>
+                    </div>
+                    <button class="cart__checkout" type="button">Thanh toán</button>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="../js/deliveryoder.js"></script>
+
+</body>
+
+</html>

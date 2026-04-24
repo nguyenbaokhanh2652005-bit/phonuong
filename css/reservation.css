@@ -1,0 +1,596 @@
+/* RESET CƠ BẢN */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* HEADER BAR */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #f6f1ea;
+    /* nền ngà nhạt như ảnh */
+    border-top: 3px solid #2a2a2a;
+    /* đường viền trên */
+    border-bottom: 1px solid #cfc7bd;
+    /* viền dưới mảnh */
+}
+
+
+/* hàng bên trong */
+
+.header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 42px;
+    /* chiều cao thanh */
+}
+
+
+/* LOGO */
+
+.brand {
+    text-decoration: none;
+    color: #003049;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 6px;
+    /* giãn chữ P I Z Z A */
+    line-height: 1;
+}
+
+
+/* CỤM BÊN PHẢI */
+
+.header__right {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+}
+
+
+/* Ô cờ */
+
+.lang-btn {
+    width: 72px;
+    border: none;
+    background: transparent;
+    border-left: 1px solid #2a2a2a;
+    /* vạch ngăn như ảnh */
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+
+/* Ô Login */
+
+.login-btn {
+    width: 170px;
+    border-left: 1px solid #2a2a2a;
+    /* vạch ngăn */
+    text-decoration: none;
+    color: #003049;
+    font-weight: 700;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* mũi tên tròn như ảnh */
+
+.login-btn span {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    background: #003049;
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+    line-height: 1;
+}
+
+
+/* ====== RESERVE HERO (BG + OVERLAY) ====== */
+
+.main-reserve {
+    position: relative;
+    background-image: url("../img/toancanhquanphonuong.jpg");
+    background-size: cover;
+    /* phủ toàn khối */
+    background-position: center;
+    /* canh giữa */
+    background-repeat: no-repeat;
+}
+
+.main-reserve::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    /* chỉnh độ tối */
+    z-index: 0;
+}
+
+.reserve-hero {
+    position: relative;
+    min-height: 460px;
+    /* trước 520px → giảm */
+    /* 👈 chỉnh cao thấp ở đây */
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.reserve-hero__bg {
+    position: absolute;
+    inset: 0;
+    background: url("../img/reserve-bg.jpg") center/cover no-repeat;
+    /* 👈 đổi ảnh nền */
+    filter: blur(2px);
+    /* blur nhẹ như ảnh gốc */
+    transform: scale(1.03);
+    /* tránh viền trắng do blur */
+}
+
+.reserve-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .45);
+    /* 👈 độ tối nền (0.35 - 0.55) */
+}
+
+.reserve-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 54px 0 32px;
+}
+
+.reserve-hero__title {
+    margin: 0 0 12px;
+    font-size: clamp(34px, 4.5vw, 60px);
+    /* trước 40–72 */
+    font-weight: 500;
+}
+
+.reserve-hero__subtitle {
+    margin: 0 auto 22px;
+    max-width: 920px;
+    font-size: clamp(14px, 1.8vw, 22px);
+    /* trước 16–28 */
+    opacity: .95;
+}
+
+
+/* ====== FORM BAR ====== */
+
+.reserve-form {
+    margin: 0 auto;
+    max-width: 980px;
+    /* trước 1100px */
+}
+
+.reserve-form__fields {
+    background: rgba(255, 255, 255, .95);
+    border-radius: 14px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 1fr 220px;
+    /* 4 field + nút Search */
+    align-items: stretch;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, .25);
+}
+
+.field {
+    padding: 10px 14px;
+    /* trước 14px 18px */
+    text-align: left;
+    color: #003049;
+    border-right: 1px solid rgba(15, 42, 79, .15);
+}
+
+.field label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    opacity: .85;
+}
+
+.field select,
+.field input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 17px;
+    /* trước 20px */
+    font-weight: 500;
+    color: #003049;
+    outline: none;
+}
+
+.reserve-form__submit {
+    border: none;
+    background: #c9d9ea;
+    /* xanh nhạt như ảnh */
+    color: #fff;
+    font-size: 18px;
+    /* trước 22px */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.reserve-form__submit:hover {
+    filter: brightness(.97);
+}
+
+
+/* ====== LOCATION CHIPS ====== */
+
+.location {
+    margin-top: 16px;
+    /* trước 22px */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.location__label {
+    font-size: 26px;
+    /* trước 34px */
+    font-weight: 300;
+    color: #fff;
+}
+
+.location__chips {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.chip {
+    border: 2px solid #003049;
+    background: rgba(255, 255, 255, .95);
+    color: #003049;
+    border-radius: 6px;
+    font-size: 20px;
+    /* trước 28px */
+    padding: 6px 12px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.chip--active {
+    background: #003049;
+    color: #fff;
+}
+
+
+/* ====== RESERVE INFO (BG + OVERLAY) ====== */
+
+.reserve-info {
+    position: relative;
+    padding: 60px 0 70px;
+    /* trước 80px 0 90px */
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.reserve-info__bg {
+    position: absolute;
+    inset: 0;
+    background: url("../img/reserve-bg.jpg") center/cover no-repeat;
+    /* 👈 dùng chung ảnh */
+    filter: blur(2px);
+    transform: scale(1.03);
+}
+
+.reserve-info__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    /* phần text dài nên tối hơn chút */
+}
+
+.reserve-info__content {
+    position: relative;
+    z-index: 2;
+}
+
+.reserve-info__title {
+    margin: 0 0 8px;
+    font-size: 44px;
+    font-weight: 500;
+}
+
+.reserve-info__or {
+    margin: 0 0 20px;
+    font-size: 20px;
+    opacity: .95;
+}
+
+.reserve-info__text {
+    max-width: 980px;
+    margin: 0 auto;
+    font-size: 18px;
+    /* trước 22px */
+    line-height: 1.6;
+}
+
+.reserve-info__note {
+    margin-top: 26px;
+    font-size: 26px;
+    /* trước 34px */
+    font-weight: 600;
+}
+
+
+/* ====== RESPONSIVE (để không vỡ trên màn hình nhỏ) ====== */
+
+@media (max-width: 1024px) {
+    .reserve-form__fields {
+        grid-template-columns: 1fr 1fr;
+    }
+    .field {
+        border-right: none;
+        border-bottom: 1px solid rgba(15, 42, 79, .15);
+    }
+    .reserve-form__submit {
+        grid-column: 1 / -1;
+        height: 54px;
+    }
+    .location__label {
+        font-size: 28px;
+    }
+    .chip {
+        font-size: 22px;
+    }
+}
+
+.floating-call {
+    position: fixed;
+    /* 👈 dính màn hình khi scroll */
+    right: 24px;
+    bottom: 24px;
+    z-index: 9999;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
+    background: #53b83a;
+    /* xanh kiểu gọi điện */
+    color: #fff;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+}
+
+
+/* vòng tỏa 1 */
+
+.floating-call::before {
+    content: "";
+    position: absolute;
+    inset: -10px;
+    border-radius: 999px;
+    border: 2px solid rgba(83, 184, 58, .55);
+    animation: call-pulse 1.6s ease-out infinite;
+}
+
+
+/* vòng tỏa 2 (nhẹ hơn) */
+
+.floating-call::after {
+    content: "";
+    position: absolute;
+    inset: -22px;
+    border-radius: 999px;
+    border: 2px solid rgba(83, 184, 58, .35);
+    animation: call-pulse 1.6s ease-out infinite;
+    animation-delay: .6s;
+}
+
+@keyframes call-pulse {
+    0% {
+        transform: scale(.75);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+
+/* hover cho “đã tay” */
+
+.floating-call:hover {
+    transform: translateY(-2px);
+}
+
+
+/* (optional) mobile nhỏ hơn */
+
+@media (max-width: 480px) {
+    .floating-call {
+        width: 56px;
+        height: 56px;
+        font-size: 24px;
+        right: 16px;
+        bottom: 16px;
+    }
+}
+
+
+/*CALL//BUTTON*/
+
+
+/* Overlay chỉ để làm tối nền, KHÔNG được chặn click */
+
+
+/* ===== FIX HIỆN MESSAGE ĐẶT BÀN ===== */
+
+.reserve-form__msg {
+    display: block !important;
+    grid-column: 1 / -1;
+    /* chiếm toàn hàng grid */
+    width: 100%;
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.45;
+    padding: 10px 12px;
+    border-radius: 12px;
+    z-index: 10;
+    position: relative;
+    background: rgba(0, 0, 0, .08);
+    color: #000;
+}
+
+.header-logo {
+    width: 72px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-left: 1px solid rgba(31, 47, 90, .18);
+}
+
+.header-logo img {
+    width: 88%;
+    /* 👈 giảm tại đây (80–90%) */
+    height: 88%;
+    object-fit: contain;
+}
+
+
+/* Logo header */
+
+.header-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+
+/* Ảnh logo */
+
+.header-logo img {
+    width: 42px;
+    /* chỉnh to/nhỏ tại đây */
+    height: auto;
+    /* ❗ chống méo */
+    aspect-ratio: 1 / 1;
+    /* logo tròn */
+    object-fit: contain;
+    display: block;
+    transition: transform .6s ease;
+    /* đặt transition ở trạng thái thường */
+    transform-origin: center;
+}
+
+.header-logo img {
+    width: 42px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    animation: logoSpin 6s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes logoSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Hover xoay */
+
+.header-logo:hover img {
+    transform: rotate(360deg);
+}
+
+#reserveMsg {
+    grid-column: 1 / -1;
+    /* chiếm toàn bộ hàng */
+    margin-top: 12px;
+}
+
+.location__label {
+    color: #f8fafc;
+    /* trắng sáng */
+    opacity: 1;
+    /* ép sáng lại */
+    filter: none;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .6);
+}
+
+.location {
+    position: relative;
+}
+
+.location::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    /* nền mờ */
+    backdrop-filter: blur(6px);
+    z-index: 0;
+}
+
+.location>* {
+    position: relative;
+    z-index: 1;
+    /* chữ nổi lên trên nền */
+}
+
+.contact-actions a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.zalo-link {
+    color: #0068ff;
+}
+
+.hotline {
+    color: #ffffff;
+}
+
+.sep {
+    margin: 0 8px;
+    opacity: .5;
+}
